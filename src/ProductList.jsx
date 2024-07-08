@@ -1,7 +1,7 @@
 import React, { useState,useEffect } from 'react';
 import './ProductList.css'
-import addItem from "./CreateSlice"
-import {useDispatch } from "react-redux";
+import addItem from "./CreatSlice"
+
 function ProductList() {
     const dispatch = useDispatch();
     const plantsArray = [

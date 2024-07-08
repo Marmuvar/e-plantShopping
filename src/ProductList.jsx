@@ -1,8 +1,9 @@
 import React, { useState,useEffect } from 'react';
 import './ProductList.css'
-import addItem from "./CreatSlice"
+import addItem from "./CreateSlice"
+import {useDispatch } from "react-redux";
 function ProductList() {
-  
+    const dispatch = useDispatch();
     const plantsArray = [
         {
             category: "Air Purifying Plants",

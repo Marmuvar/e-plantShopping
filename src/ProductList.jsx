@@ -1,6 +1,7 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ProductList.css'
 import addItem from "./CreatSlice"
+import {useDispatch} from 'react-redux'
 
 function ProductList() {
     const dispatch = useDispatch();
@@ -219,18 +220,18 @@ function ProductList() {
     justifyContent: 'space-between',
     alignIems: 'center',
     fontSize: '20px',
-   }
+   };
    const styleObjUl={
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '1100px',
-   }
+   };
    const styleA={
     color: 'white',
     fontSize: '30px',
     textDecoration: 'none',
-   }
+   };
 
    const [addedToCart, setAddedToCart] = useState({});
    const handleAddToCart = (product) => {
@@ -263,24 +264,24 @@ function ProductList() {
         </div>
 
         <div className="product-grid">
-            {plantsArray.map((category, index) => {
+            {plantsArray.map((category, index) => (
                 <div key ={index}>
                     <h1><div>{category.category}</div></h1>
                     <div className="product-list">
-                        {category.plants.map((plant, plantIndex) => {
+                        {category.plants.map((plant, plantIndex) => (
                             <div className="product-card" key="plantIndex">
-                                    <img src={item.img} alt={plant.name}/>
+                                    <img src={plant.img} alt={plant.name}/>
                                 <div className="prod_name">{plant.name}</div>
-                                <div className="prod_desc">{item.description}</div>
-                                <div className="prod_cost">{item.cost}</div>
+                                <div className="prod_desc">{plant.description}</div>
+                                <div className="prod_cost">{plant.cost}</div>
                                 <div className="addToCartBtn">
                                     <button onClick={()=>handleAddToCart(plant)}>Add to Cart</button>
                                 </div>
                             </div>
-                        })}
+                        ))}
                     </div>
                 </div>
-            })}
+            ))}
         </div>
 
     </div>
